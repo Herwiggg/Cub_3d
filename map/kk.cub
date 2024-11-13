@@ -5,7 +5,7 @@ DO ./textures/op.png
 
 
 F 110,220,255
-C  19 . 175,42
+C 19,175,42
 
 SO ./textures/loculy.png
 

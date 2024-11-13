@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:33:59 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/12 17:58:43 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/14 00:02:13 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ int main(int ac, char **av)
     data.file = ft_read_and_stock(av[1], &data);
     if (data.file == NULL)
 		return (-1);
-    stock_elem(&data);
+    stock_texts(&data);
+    stock_colors(&data);
     printf("%s\n", data._so);
+    printf("%s\n", data._c);
     return (0);
 }
 
