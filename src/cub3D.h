@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:33:48 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/14 00:01:53 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/14 19:50:14 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ void 	stock_texts(t_data *data);
 void 	stock_texts2(char **file, char **tab, int i, int j);
 void 	stock_colors(t_data *data);
 void 	stock_colors2(char **file, char **tab, int i, int j);
+void    check_color(char *color);
 
 #endif
