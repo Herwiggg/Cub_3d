@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:16:10 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/14 19:57:29 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/15 17:41:00 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,8 @@ void stock_colors(t_data *data)
             {
                 stock_texts2(data->file, &(data->_f), i, j);
                 check_color(data->_f);
+                data->stock_f = ft_split_modif(data->_f);
+                free(data->_f);
                 count++;
                 found++;
             }
@@ -133,6 +135,8 @@ void stock_colors(t_data *data)
             {
                 stock_texts2(data->file, &(data->_c), i, j);
                 check_color(data->_c);
+                data->stock_c = ft_split_modif(data->_c);
+                free(data->_c);
                 count++;
                 found++;
             }

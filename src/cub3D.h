@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:33:48 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/14 19:50:14 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/15 17:22:54 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct s_data
 	char	**file;
 	char	**map;
 	char	**tab;
+	char	**stock_c;
+	char	**stock_f;
 	char	*_no;
 	char	*_so;
 	char	*_we;
@@ -40,6 +42,7 @@ typedef struct s_data
 	char	*_do;
 	char	*_c;
 	char	*_f;
+
 	int		readed;
 }			t_data;
 
@@ -54,5 +57,10 @@ void 	stock_texts2(char **file, char **tab, int i, int j);
 void 	stock_colors(t_data *data);
 void 	stock_colors2(char **file, char **tab, int i, int j);
 void    check_color(char *color);
+
+/*--------UTILS--------*/
+int    ft_count(char *str);
+char    **ft_strcpy_modif(char **tab, char *str);
+char    **ft_split_modif(char *str);
 
 #endif

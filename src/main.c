@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:33:59 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/14 00:02:13 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/15 17:41:17 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,14 @@ int main(int ac, char **av)
 		return (-1);
     stock_texts(&data);
     stock_colors(&data);
-    printf("%s\n", data._so);
-    printf("%s\n", data._c);
+ //   printf("%s\n", data._so);
+  //  printf("%s\n", data._c);
+    int i = 0;
+    while(data.stock_c[i])
+    {
+        printf("%s\n", data.stock_c[i]);
+        i++;
+    }
     return (0);
 }
 

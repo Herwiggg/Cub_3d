@@ -12,7 +12,8 @@ LIBS	= $(LIBFT)/libft.a $(GNL)/gnl.a $(RPTINTF)/libftprintf.a $(LIBMLX)/libmlx42
 SRCS =	src/main.c\
 		src/copy_file.c\
 		src/parsing_map_utils.c\
-		src/stock_data.c
+		src/stock_data.c\
+		src/utils1.c\
 		
 OBJS	= ${SRCS:.c=.o}
 OBJS_BN	= ${SRCS_BN:.c=.o}
