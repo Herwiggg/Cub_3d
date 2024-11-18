@@ -1,13 +1,13 @@
-NO ./textures/ab.png
-WE ./textures/fsg.png
-EA ./textures/iip.png
-DO ./textures/op.png
+                NO ./textures/ab.png
+                WE ./textures/fsg.png
+                EA ./textures/iip.png
+                DO ./textures/op.png
 
 
-F 110,220,255
-C 19,175,42
+F               100,220,255
+        C               119, 175,  44
 
-SO ./textures/loculy.png
+        SO                                ./textures/loculy.png
 
         1111111111111111111111111
         1000000000110000000000001
