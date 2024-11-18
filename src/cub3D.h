@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:33:48 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/18 17:07:53 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/18 19:22:07 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,13 @@ void 	stock_data(t_data *data);
 void 	stock_texts(char **file, char **tab, int i, int j);
 void 	stock_colors(char **file, char **tab, int i, int j);
 void    check_color(char *color);
+void 	check_255_color(char **tab);
 
 /*--------UTILS--------*/
-int    ft_count(char *str);
+int    	ft_count(char *str);
 char    **ft_strcpy_modif(char **tab, char *str);
 char    **ft_split_modif(char *str);
+int 	is_a_char_map(char c);
+int 	all_data_are_stocked(t_data *data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:16:10 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/18 17:15:46 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/18 19:30:19 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,11 @@ void stock_data(t_data *data)
                 check_color(data->_f);
                 data->stock_f = ft_split_modif(data->_f);
                 free(data->_f);
+                check_255_color(data->stock_f);
                 count_colors++;
                 found++;
             }
-             else if (data->file[i][j] == 'C')
+            else if (data->file[i][j] == 'C')
             {
                 if (data->stock_c != NULL)
                     ft_errormap("Wrong colors format\n");
@@ -90,8 +91,16 @@ void stock_data(t_data *data)
                 check_color(data->_c);
                 data->stock_c = ft_split_modif(data->_c);
                 free(data->_c);
+                check_255_color(data->stock_c);
                 count_colors++;
                 found++;
+            }
+            else if (is_a_char_map(data->file[i][j]) == 0)
+            {
+                if (all_data_are_stocked(data) == -1)
+                    ft_errormap("Wrong file format\n");
+                else
+                    ft_errormap("good\n");
             }
             j++;
         }
@@ -214,4 +223,6 @@ void    check_color(char *color)
     }
      if (count > 3)
         ft_errormap("wrong color format\n");
+
 }
+

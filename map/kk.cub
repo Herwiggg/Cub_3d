@@ -4,8 +4,8 @@
                 DO ./textures/op.png
 
 
-F               100,220,255
-        C               119, 175,  44
+F               10,220,226
+C               222, 222,  44
 
         SO                                ./textures/loculy.png
 

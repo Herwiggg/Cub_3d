@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:03:07 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/15 17:37:07 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/18 19:30:28 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,5 @@ char    **ft_split_modif(char *str)
     ft_strcpy_modif(tab, str);
     return (tab);
 }
+
 

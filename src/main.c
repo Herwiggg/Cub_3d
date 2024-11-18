@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:33:59 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/18 17:03:04 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/18 18:58:47 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ int main(int ac, char **av)
     if (data.file == NULL)
 		return (-1);
     stock_data(&data);
-    printf("%s\n", data._so);
+//    printf("%s\n", data._so);
  //   printf("%s\n", data._so);
   //  printf("%s\n", data._c);
-    int i = 0;
-    while(data.stock_c[i])
-    {
-        printf("%s\n", data.stock_c[i]);
-        i++;
-    }
+    // int i = 0;
+    // while(data.stock_c[i])
+    // {
+    //     printf("%s\n", data.stock_c[i]);
+    //     i++;
+    // }
     return (0);
 }
 
