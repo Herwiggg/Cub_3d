@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:33:48 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/19 00:59:10 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/19 16:09:57 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,10 @@ void 	stock_colors(char **file, char **tab, int i, int j);
 void    check_color(char *color);
 void 	check_255_color(char **tab);
 void 	copy_map(char **file, int i, int j, char ***map);
+int 	check_map(char **map);
+int 	check_first_last_wall(char **map);
+int 	del_space_map(char *str);
+int 	check_spaces(char **map, int i, int j);
 
 /*--------UTILS--------*/
 int    	ft_count(char *str);

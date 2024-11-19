@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:33:59 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/19 01:13:28 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/19 15:15:23 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int main(int ac, char **av)
             x++;
         }
     }
+    check_map(data.map);
     return (0);
 }
 

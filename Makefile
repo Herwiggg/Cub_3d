@@ -15,6 +15,7 @@ SRCS =	src/main.c\
 		src/stock_data.c\
 		src/utils1.c\
 		src/copy_map.c\
+		src/check_map.c\
 		
 OBJS	= ${SRCS:.c=.o}
 OBJS_BN	= ${SRCS_BN:.c=.o}
