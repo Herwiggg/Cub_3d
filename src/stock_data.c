@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:16:10 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/18 19:30:19 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/19 01:19:33 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,10 @@ void stock_data(t_data *data)
                 if (all_data_are_stocked(data) == -1)
                     ft_errormap("Wrong file format\n");
                 else
-                    ft_errormap("good\n");
+                {
+                    copy_map(data->file, i, j, &(data->map));
+                    return;
+                }
             }
             j++;
         }
@@ -206,7 +209,7 @@ void    check_color(char *color)
         i++;
     }
     if (count != 2)
-        ft_errormap("wrong color format\n");
+        ft_errormap("Wrong color format\n");
     i = 0;
     count = 0;
     while (color[i])
@@ -222,7 +225,7 @@ void    check_color(char *color)
         i++;
     }
      if (count > 3)
-        ft_errormap("wrong color format\n");
+        ft_errormap("Wrong color format\n");
 
 }
 

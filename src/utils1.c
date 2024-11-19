@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:03:07 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/18 19:30:28 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/19 00:59:07 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,13 @@ char    **ft_split_modif(char *str)
     return (tab);
 }
 
+char	**ft_doublefree(char **tab, int k)
+{
+	int	i;
 
+	i = -1;
+	while (++i < k)
+		free(tab[i]);
+	free(tab);
+	return (NULL);
+}

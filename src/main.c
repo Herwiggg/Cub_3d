@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:33:59 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/18 18:58:47 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/19 01:13:28 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,15 @@ int main(int ac, char **av)
     //     printf("%s\n", data.stock_c[i]);
     //     i++;
     // }
+    int x = 0;
+    if (data.map != NULL)
+    {
+        while(data.map[x])
+        {
+            printf("%s", data.map[x]);
+            x++;
+        }
+    }
     return (0);
 }
 
