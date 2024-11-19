@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:33:48 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/19 16:09:57 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:39:30 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@
 # include "../lib/get_next_line/get_next_line.h"
 # include "../lib/libft42/libft.h"
 
+typedef struct s_player
+{
+	int		y;
+	int		x;
+	char	pos;
+}			t_player;
 
 typedef struct s_data
 {
@@ -42,8 +48,8 @@ typedef struct s_data
 	char	*_do;
 	char	*_c;
 	char	*_f;
-
 	int		readed;
+	t_player player;
 }			t_data;
 
 /*--------PARSING--------*/
@@ -58,7 +64,7 @@ void 	stock_colors(char **file, char **tab, int i, int j);
 void    check_color(char *color);
 void 	check_255_color(char **tab);
 void 	copy_map(char **file, int i, int j, char ***map);
-int 	check_map(char **map);
+int 	check_map(char **map, t_data *data);
 int 	check_first_last_wall(char **map);
 int 	del_space_map(char *str);
 int 	check_spaces(char **map, int i, int j);

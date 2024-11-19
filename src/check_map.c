@@ -6,13 +6,13 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 14:46:22 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/19 17:01:52 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:39:30 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int check_map(char **map)
+int check_map(char **map, t_data *data)
 {
     int i;
     int j;
@@ -40,6 +40,9 @@ int check_map(char **map)
                     flag_start++;
                     if (flag_start > 1)
                         ft_errormap("Bad start map\n");
+                    data->player.x = j;
+                    data->player.y = i;
+                    data->player.pos = map[i][j];
                 }
             }
             else if (map[i][j] != '1' && map[i][j] != '0' && map[i][j] != 'N' && map[i][j] != 'S' && map[i][j] != 'E' && map[i][j] != 'W' && map[i][j] != ' ' && map[i][j] != '\t')
