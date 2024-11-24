@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 01:19:14 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/19 01:19:35 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/24 23:39:03 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void copy_map(char **file, int i, int j, char ***map)
     int cp_i;
     int flag;
     int k;
+    int flag_empty;
 
+    flag_empty = 0;
     k = 0;
     flag = 0;
     j = 0;
@@ -30,6 +32,7 @@ void copy_map(char **file, int i, int j, char ***map)
     while (file[i])
     {
         j = 0;
+        flag_empty = 0;
         while (file[i][j])
         {
             if (j == 0 && file[i][j] == '\n')
@@ -37,7 +40,14 @@ void copy_map(char **file, int i, int j, char ***map)
                 flag = 1;
                 break;
             }
+            if (file[i][j] != '\n' && file[i][j] != ' ' && file[i][j] != '\t')
+                flag_empty = 1;
             j++;
+        }
+        if (flag_empty == 0)
+        {
+            ft_errormap("Wrong file format\n");
+            break;
         }
         count++;
         i++;
