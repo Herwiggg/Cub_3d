@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:16:10 by almichel          #+#    #+#             */
-/*   Updated: 2024/11/19 01:19:33 by almichel         ###   ########.fr       */
+/*   Updated: 2024/11/24 23:13:47 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,7 +196,9 @@ void    check_color(char *color)
 {
     int i;
     int count;
-    
+    int flag;
+
+    flag = 0;
     count = 0;
     i = 0;
 
@@ -224,8 +226,26 @@ void    check_color(char *color)
             break;
         i++;
     }
+    i = 0;
+    while (color[i])
+    {
+        if (color[i] == ',' && flag == 0)
+        {
+            flag = -1;
+            break;
+        }
+        if (color[i] == ',')
+            flag = 0;
+        else if (color[i] >= '0' && color[i] <= '9')
+            flag++;
+        i++;
+
+    }
      if (count > 3)
         ft_errormap("Wrong color format\n");
+    else if (flag == -1 || flag == 0)
+        ft_errormap("Wrong color format\n");
+
 
 }
 
