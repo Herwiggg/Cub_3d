@@ -78,7 +78,7 @@ int	main(int argc, char **argv)
         	ft_errormap("File is not a .cub\n");
 		data.file = ft_read_and_stock(argv[1], &data);
 		stock_data(&data);
-		check_map(data.map, &data);
+		check_map(data.map);
 		if (parsing(argv[1], &jeu))
 			return (1);
 		fusion(&jeu, &info);

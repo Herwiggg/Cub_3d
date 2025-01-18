@@ -16,8 +16,8 @@ DIR_OBJS		=	objs
 
 SRCS_NAMES		=	main.c game/keysandpars.c game/texture.c game/initialisation.c game/initialisationbis.c \
 					game/game_launcher.c game/game_launcherv2.c game/game_launcherv3.c \
-					parsing/parsing.c parsing/utils.c parsing/checking.c\
-					gnl/get_next_line.c gnl/get_next_line_utils.c parsing/utils2.c parsing/utils3.c parsing/copy_map_check.c parsing/checking_utils2.c parsing/checking_utils.c\
+					parsing/parsing.c parsing/parsing2.c parsing/utils.c parsing/checking.c\
+					gnl/get_next_line.c gnl/get_next_line_utils.c parsing/utils2.c parsing/utils3.c parsing/copy_map_check.c parsing/checking_utils2.c parsing/checking_utils3.c parsing/checking_utils.c\
 					fusion.c \
 
 

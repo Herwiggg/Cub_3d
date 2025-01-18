@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 20:55:24 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/17 22:44:37 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/18 01:57:29 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ void stock_texts(char **file, char **tab, int i, int j)
     cpi = i;
     j = j + 2;
     cpj = j;
-
     while (file[i][j] && (file[i][j] == ' ' || file[i][j] == '\t'))
         j++;
     while (file[i][j])
@@ -119,19 +118,13 @@ void stock_texts(char **file, char **tab, int i, int j)
         j++;
         count++;
     }
-
     *tab = malloc((count) * sizeof(char));
     if (!(*tab))
         return;
-
     while (file[cpi][cpj] && (file[cpi][cpj] == ' ' || file[cpi][cpj] == '\t'))
         cpj++;
     while (file[cpi][cpj] && file[cpi][cpj] != '\n')
-    {
-        (*tab)[index] = file[cpi][cpj];
-        index++;
-        cpj++;
-    }
+        (*tab)[index++] = file[cpi][cpj++];
     (*tab)[index] = '\0';
 }
 
@@ -147,7 +140,6 @@ void stock_colors(char **file, char **tab, int i, int j)
     cpi = i;
     j = j + 1;
     cpj = j;
-
     while (file[i][j] && (file[i][j] == ' ' || file[i][j] == '\t'))
         j++;
     while (file[i][j])
@@ -158,71 +150,10 @@ void stock_colors(char **file, char **tab, int i, int j)
     *tab = malloc((count) * sizeof(char));
     if (!(*tab))
         return;
-
     while (file[cpi][cpj] && (file[cpi][cpj] == ' ' || file[cpi][cpj] == '\t'))
         cpj++;
     while (file[cpi][cpj] && file[cpi][cpj] != '\n')
-    {
-        (*tab)[index] = file[cpi][cpj];
-        index++;
-        cpj++;
-    }
+        (*tab)[index++] = file[cpi][cpj++];
     (*tab)[index] = '\0';
 }
 
-void    check_color(char *color)
-{
-    int i;
-    int count;
-    int flag;
-
-    flag = 0;
-    count = 0;
-    i = 0;
-
-    while (color[i])
-    {
-        if (color[i] == ',')
-            count++;
-        else if ((color[i] < '0' || color[i] > '9') && (color[i] != ' ' && color[i] != '\t'))
-            count = 5;
-        i++;
-    }
-    if (count != 2)
-        ft_errormap("Wrong color format\n");
-    i = 0;
-    count = 0;
-    while (color[i])
-    {
-        if (color[i] != ',' && color[i] != ' ' && color[i] != '\t')
-        {
-            count++;
-        }
-        else
-            count = 0;
-        if (count > 3)
-            break;
-        i++;
-    }
-    i = 0;
-    while (color[i])
-    {
-        if (color[i] == ',' && flag == 0)
-        {
-            flag = -1;
-            break;
-        }
-        if (color[i] == ',')
-            flag = 0;
-        else if (color[i] >= '0' && color[i] <= '9')
-            flag++;
-        i++;
-
-    }
-     if (count > 3)
-        ft_errormap("Wrong color format\n");
-    else if (flag == -1 || flag == 0)
-        ft_errormap("Wrong color format\n");
-
-
-}

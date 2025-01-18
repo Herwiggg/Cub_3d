@@ -104,7 +104,12 @@ typedef struct s_data
 	char	*_do;
 	char	*_c;
 	char	*_f;
+	int		i;
+	int		j;
 	int		readed;
+	int		count_texts;
+	int		found;
+	int 	count_colors;
 	t_player player;
 }			t_data;
 
@@ -191,18 +196,27 @@ int    		ft_count(char *str);
 // parsing.c
 int			check_position(t_jeu *jeu);
 int			key_release(int key, t_info *info);
-int 		check_map(char **map, t_data *data);
+void 		check_map(char **map);
+void 		check_map2(char **map, int i, int j, int *flag_start);
 int 		check_first_last_wall(char **map);
 int 		del_space_map(char *str);
 int 		check_spaces(char **map, int i, int j);
 void 		stock_data(t_data *data);
+void 		stock_data2(t_data *data);
 void 		stock_texts(char **file, char **tab, int i, int j);
 void 		stock_colors(char **file, char **tab, int i, int j);
 void    	check_color(char *color);
+void 		check_color2(char *color, int *count);
+void 		check_colors_c(t_data *data, int i, int j);
+void 		check_colors_f(t_data *data, int i, int j);
+void		complete_checkup(t_data *data);
 int 		is_a_char_map(char c);
 int 		all_data_are_stocked(t_data *data);
 void 		check_255_color(char **tab);
+void 		check_textures(t_data *data, int i, int j, char *text);
 void 		copy_map(char **file, int i, int j, char ***map);
+void 		copy_map2(char **file, int i, int *count);
+void 		copy_map3(char **file, int i, int k, int count, char ***map);
 
 // first_six_line.c
 int			copy_map_value(char *file, t_jeu *jeu);
