@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:41:43 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/22 19:17:35 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 20:51:23 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,9 @@ void stock_data2(t_data *data)
 
 void check_textures(t_data *data, int *count, char *text)
 {
+    (void)text;
     *count += 1;
-    stock_texts(data->file, &text, data->i, data->j);
+    //stock_texts(data->file, &text, data->i, data->j);
     data->count_texts++;
     data->found++;
 }
@@ -65,6 +66,7 @@ void check_colors_f(t_data *data, int i, int j)
     data->stock_f = ft_split_modif(data->_f);
     free(data->_f);
     check_255_color(data->stock_f);
+    free_tab(data->stock_f);
     data->count_colors++;
     data->found++;
 }

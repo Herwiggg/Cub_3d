@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/22 20:21:04 by almichel          #+#    #+#             */
+/*   Updated: 2025/01/22 20:21:56 by almichel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "cub3d.h"
 
 // retravailler ca
@@ -79,6 +93,7 @@ int	main(int argc, char **argv)
 		data.file = ft_read_and_stock(argv[1], &data);
 		stock_data(&data);
 		check_map(data.map);
+		free_check(&data);
 		if (parsing(argv[1], &jeu))
 			return (1);
 		fusion(&jeu, &info);

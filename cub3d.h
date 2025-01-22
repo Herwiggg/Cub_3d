@@ -221,6 +221,7 @@ void 		check_textures(t_data *data,int *count, char *text);
 void 		copy_map(char **file, int i, int j, char ***map, t_data *data);
 void 		copy_map2(char **file, int i, int *count);
 void 		copy_map3(char **file, int i, int k, int count, char ***map);
+void 		free_check(t_data *data);
 
 // first_six_line.c
 int			copy_map_value(char *file, t_jeu *jeu);

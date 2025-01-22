@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:27:31 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/22 17:05:08 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 21:22:27 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,13 @@ char    **ft_strcpy_modif(char **tab, char *str)
     i = 0;
     k = 0;
     j = 0;
-    while (str[i])
+    while (k < ft_count(str))
     {
         j = 0;
         while (str[i] && str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i] != ',')
-        tab[k][j++] = str[i++];
-    tab[k++][j] = '\0';
+            tab[k][j++] = str[i++];
+        tab[k][j] = '\0';
+        k++;
         while (str[i] == ' ' || str[i] == '\t' || str[i] == ',')
             i++;
     }
@@ -73,6 +74,8 @@ char    **ft_split_modif(char *str)
             i++;
         }
         tab[k++] = malloc((j + 1) * sizeof(char));
+        if (!tab[k - 1])
+			return (ft_doublefree(tab, k));
         j = 0;
         while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == ',')
             i++;
@@ -108,15 +111,7 @@ void check_255_color(char **tab)
         }
         i++;
     }
-    i = 0;
     if (flag == -1)
-    {
-        while (tab[i])
-        {
-            free(tab[i]);
-            i++;
-        }
-	    free(tab);
         ft_errormap("Wrong color format\n");
-    }
+   
 }
