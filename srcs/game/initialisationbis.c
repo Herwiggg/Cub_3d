@@ -1,9 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   initialisationbis.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/22 23:53:51 by almichel          #+#    #+#             */
+/*   Updated: 2025/01/22 23:53:55 by almichel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
 
-	// for (int i = 0; info->jeu->map_spaced[i]; i++)
-	// {
-	// 	/* code */
-	// }
 double	calculateperpwalldist(t_info *info)
 {
 	double	r;

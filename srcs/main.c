@@ -6,11 +6,9 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 20:21:04 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/22 23:06:13 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 23:43:05 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "cub3d.h"
 
@@ -89,7 +87,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		if (ft_check_cub(argv[1]) == -1)
-        	ft_errormap("File is not a .cub\n");
+			ft_errormap("File is not a .cub\n");
 		data.file = ft_read_and_stock(argv[1], &data);
 		stock_data(&data);
 		check_map(data.map);

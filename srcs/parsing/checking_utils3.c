@@ -6,14 +6,13 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 01:57:08 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/22 23:19:12 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 23:48:47 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-
-void    check_color(char *color, t_data *data)
+void check_color(char *color, t_data *data)
 {
     int i;
     int count;
@@ -33,7 +32,7 @@ void    check_color(char *color, t_data *data)
             flag++;
         i++;
     }
-     if (count > 3)
+    if (count > 3)
         ft_errormap2("Wrong color format\n", data);
     else if (flag == -1 || flag == 0)
         ft_errormap2("Wrong color format\n", data);
@@ -69,8 +68,8 @@ void check_color2(char *color, int *count, t_data *data)
 }
 
 void complete_checkup(t_data *data)
-{   
-    if (data->count_ea > 1 || data->count_we > 1|| data->count_no > 1 || data->count_so > 1)
+{
+    if (data->count_ea > 1 || data->count_we > 1 || data->count_no > 1 || data->count_so > 1)
         ft_errormap2("Wrong textures format\n", data);
     if (data->count_texts != 4)
         ft_errormap2("Wrong textures format\n", data);

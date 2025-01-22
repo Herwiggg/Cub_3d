@@ -6,13 +6,13 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:30:55 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/22 19:26:38 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/23 00:10:06 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void copy_map(char **file, int i, int j, char ***map, t_data *data)
+void    copy_map(t_data *data, int i, int j, char ***map)
 {
     int count;
     int cp_i;
@@ -22,18 +22,18 @@ void copy_map(char **file, int i, int j, char ***map, t_data *data)
     cp_i = i;
     count = 0;
     complete_checkup(data);
-    copy_map2(file, i, &count);
+    copy_map2(data->file, i, &count);
     *map = malloc((count + 1) * sizeof(char *));
     if (!(*map))
         return;
     i = cp_i;
-    copy_map3(file, i, 0, count, map);
+    copy_map3(data->file, i, count, map);
     while (++k < count)
     {
         j = 0;
-        while (file[i][j])
+        while (data->file[i][j])
         {
-            (*map)[k][j] = file[i][j];
+            (*map)[k][j] = data->file[i][j];
             j++;
         }
         (*map)[k][j] = '\0';
@@ -41,7 +41,7 @@ void copy_map(char **file, int i, int j, char ***map, t_data *data)
     }
 }
 
-void copy_map2(char **file, int i, int *count)
+void    copy_map2(char **file, int i, int *count)
 {
     int j;
     int flag;
@@ -70,10 +70,12 @@ void copy_map2(char **file, int i, int *count)
         ft_errormap("Wrong file format\n");
 }
 
-void copy_map3(char **file, int i, int k, int count, char ***map)
+void copy_map3(char **file, int i, int count, char ***map)
 {
     int j;
-    
+    int k;
+
+    k = 0;
     while (k < count)
     {
         j = 0;
@@ -88,5 +90,5 @@ void copy_map3(char **file, int i, int k, int count, char ***map)
         i += 1;
         k++;
     }
-    (*map)[k] = NULL; 
+    (*map)[k] = NULL;
 }

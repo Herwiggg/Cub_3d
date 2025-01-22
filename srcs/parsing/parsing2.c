@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:48:51 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/17 22:49:33 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 23:52:24 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,4 +138,3 @@ int	copy_game_map(t_jeu *jeu)
 	copy_game_map_norm(jeu, i, count, j);
 	return (0);
 }
-

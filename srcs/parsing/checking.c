@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 20:45:43 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/18 01:29:53 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 23:55:10 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void check_map(char **map)
     i = 1;
     if (check_first_last_wall(map) == -1)
         ft_errormap("Bad wall(s)\n");
-    while(map[i + 1])
+    while (map[i + 1])
     {
         j = 0;
         while (map[i][j] && (map[i][j] == ' ' || map[i][j] == '\t'))
             j++;
         check_map2(map, i, j, &flag_start);
-        i++;        
+        i++;
     }
     if (flag_start != 1)
         ft_errormap("Bad start map\n");
@@ -38,20 +38,20 @@ void check_map2(char **map, int i, int j, int *flag_start)
 {
     while (map[i][j] && j < del_space_map(map[i]))
     {
-         if (map[i][j] == '0' || map[i][j] == 'N' || map[i][j] == 'S' || map[i][j] == 'E' || map[i][j] == 'W')
+        if (map[i][j] == '0' || map[i][j] == 'N' || map[i][j] == 'S' || map[i][j] == 'E' || map[i][j] == 'W')
+        {
+            if (check_spaces(map, i, j) == -1)
+                ft_errormap("Bad Wall(s)\n");
+            if (map[i][j] == 'N' || map[i][j] == 'S' || map[i][j] == 'E' || map[i][j] == 'W')
             {
-                if (check_spaces(map, i, j) == -1)
-                    ft_errormap("Bad Wall(s)\n");
-                if (map[i][j] == 'N' || map[i][j] == 'S' || map[i][j] == 'E' || map[i][j] == 'W')
-                {
-                    *flag_start += 1;
-                    if (*flag_start > 1)
-                        ft_errormap("Bad start map\n");
-                }
+                *flag_start += 1;
+                if (*flag_start > 1)
+                    ft_errormap("Bad start map\n");
             }
-            else if (map[i][j] != '1' && map[i][j] != '0' && map[i][j] != 'N' && map[i][j] != 'S' && map[i][j] != 'E' && map[i][j] != 'W' && map[i][j] != ' ' && map[i][j] != '\t')
-                ft_errormap("Bad map\n");
-            j++;
+        }
+        else if (map[i][j] != '1' && map[i][j] != '0' && map[i][j] != 'N' && map[i][j] != 'S' && map[i][j] != 'E' && map[i][j] != 'W' && map[i][j] != ' ' && map[i][j] != '\t')
+            ft_errormap("Bad map\n");
+        j++;
     }
 }
 
@@ -62,7 +62,7 @@ int check_first_last_wall(char **map)
 
     i = 0;
     j = 0;
-    while(map[i])
+    while (map[i])
     {
         j = 0;
         while (map[i][j])

@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 20:55:24 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/18 01:57:29 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 23:50:26 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,62 +98,60 @@ char	**ft_read_and_stock(char *argv, t_data *data)
 	return (ft_stock(dest, argv, fd, size));
 }
 
-
-void stock_texts(char **file, char **tab, int i, int j)
+void	stock_texts(char **file, char **tab, int i, int j)
 {
-    int cpi;
-    int cpj;
-    int count;
-    int index;
+	int	cpi;
+	int	cpj;
+	int	count;
+	int	index;
 
-    count = 0;
-    index = 0;
-    cpi = i;
-    j = j + 2;
-    cpj = j;
-    while (file[i][j] && (file[i][j] == ' ' || file[i][j] == '\t'))
-        j++;
-    while (file[i][j])
-    {
-        j++;
-        count++;
-    }
-    *tab = malloc((count) * sizeof(char));
-    if (!(*tab))
-        return;
-    while (file[cpi][cpj] && (file[cpi][cpj] == ' ' || file[cpi][cpj] == '\t'))
-        cpj++;
-    while (file[cpi][cpj] && file[cpi][cpj] != '\n')
-        (*tab)[index++] = file[cpi][cpj++];
-    (*tab)[index] = '\0';
+	count = 0;
+	index = 0;
+	cpi = i;
+	j = j + 2;
+	cpj = j;
+	while (file[i][j] && (file[i][j] == ' ' || file[i][j] == '\t'))
+		j++;
+	while (file[i][j])
+	{
+		j++;
+		count++;
+	}
+	*tab = malloc((count) * sizeof(char));
+	if (!(*tab))
+		return ;
+	while (file[cpi][cpj] && (file[cpi][cpj] == ' ' || file[cpi][cpj] == '\t'))
+		cpj++;
+	while (file[cpi][cpj] && file[cpi][cpj] != '\n')
+		(*tab)[index++] = file[cpi][cpj++];
+	(*tab)[index] = '\0';
 }
 
-void stock_colors(char **file, char **tab, int i, int j)
+void	stock_colors(char **file, char **tab, int i, int j)
 {
-    int cpi;
-    int cpj;
-    int count;
-    int index;
+	int	cpi;
+	int	cpj;
+	int	count;
+	int	index;
 
-    count = 0;
-    index = 0;
-    cpi = i;
-    j = j + 1;
-    cpj = j;
-    while (file[i][j] && (file[i][j] == ' ' || file[i][j] == '\t'))
-        j++;
-    while (file[i][j])
-    {
-        j++;
-        count++;
-    }
-    *tab = malloc((count) * sizeof(char));
-    if (!(*tab))
-        return;
-    while (file[cpi][cpj] && (file[cpi][cpj] == ' ' || file[cpi][cpj] == '\t'))
-        cpj++;
-    while (file[cpi][cpj] && file[cpi][cpj] != '\n')
-        (*tab)[index++] = file[cpi][cpj++];
-    (*tab)[index] = '\0';
+	count = 0;
+	index = 0;
+	cpi = i;
+	j = j + 1;
+	cpj = j;
+	while (file[i][j] && (file[i][j] == ' ' || file[i][j] == '\t'))
+		j++;
+	while (file[i][j])
+	{
+		j++;
+		count++;
+	}
+	*tab = malloc((count) * sizeof(char));
+	if (!(*tab))
+		return ;
+	while (file[cpi][cpj] && (file[cpi][cpj] == ' ' || file[cpi][cpj] == '\t'))
+		cpj++;
+	while (file[cpi][cpj] && file[cpi][cpj] != '\n')
+		(*tab)[index++] = file[cpi][cpj++];
+	(*tab)[index] = '\0';
 }
-

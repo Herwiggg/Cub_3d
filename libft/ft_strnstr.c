@@ -13,12 +13,6 @@
 -  recherche la 1e lettre de la chaine to_find dans la chaîne str
 - mais en cherchant que jusqua n premiers caractères de str
 - retourne un ptr vers le début de la sous-chaîne
-
-- on fait n-- car on avance dans str, si on atteint n caractères 
-	examinés sans avoir trouvé to_find, la boucle stop et la fonction renvoie NULL.
-
-- avec memcmp on check si la to_find se trouve dans str en renvoyant 0
-
 - la fct renvoie un ptr vers le début de la 1e occurence de to_find dans str
 */
 

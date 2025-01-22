@@ -6,13 +6,13 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:41:43 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/22 23:18:08 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/23 00:12:50 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void stock_data(t_data *data)
+void    stock_data(t_data *data)
 {
     while (data->file[data->i])
     {
@@ -23,30 +23,29 @@ void stock_data(t_data *data)
             if (data->file[data->i][data->j] == 'N' && data->file[data->i][data->j + 1] == 'O')
                 check_textures(data, &data->count_no, data->_no);
             else if (data->file[data->i][data->j] == 'S' && data->file[data->i][data->j + 1] == 'O')
-                check_textures(data, &data->count_so , data->_so);
+                check_textures(data, &data->count_so, data->_so);
             else if (data->file[data->i][data->j] == 'W' && data->file[data->i][data->j + 1] == 'E')
                 check_textures(data, &data->count_we, data->_we);
             else if (data->file[data->i][data->j] == 'E' && data->file[data->i][data->j + 1] == 'A')
                 check_textures(data, &data->count_ea, data->_ea);
             else if (is_a_char_map(data->file[data->i][data->j]) == 0)
-                return (copy_map(data->file, data->i, data->j, &(data->map), data));
+                return (copy_map(data, data->i, data->j, &(data->map)));
             else
                 stock_data2(data);
             data->j++;
         }
         data->i++;
     }
-   complete_checkup(data);
+    complete_checkup(data);
 }
 
 void stock_data2(t_data *data)
 {
-    if(data->file[data->i][data->j] == 'F')
+    if (data->file[data->i][data->j] == 'F')
         check_colors_f(data, data->i, data->j);
     else if (data->file[data->i][data->j] == 'C')
         check_colors_c(data, data->i, data->j);
 }
-
 
 void check_textures(t_data *data, int *count, char *text)
 {
