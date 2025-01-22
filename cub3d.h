@@ -196,6 +196,7 @@ char		**ft_doublefree(char **tab, int k);
 char    	**ft_split_modif(char *str);
 char    	**ft_strcpy_modif(char **tab, char *str);
 int    		ft_count(char *str);
+int			ft_errormap2(char *str, t_data *data);
 
 // parsing.c
 int			check_position(t_jeu *jeu);
@@ -209,14 +210,14 @@ void 		stock_data(t_data *data);
 void 		stock_data2(t_data *data);
 void 		stock_texts(char **file, char **tab, int i, int j);
 void 		stock_colors(char **file, char **tab, int i, int j);
-void    	check_color(char *color);
-void 		check_color2(char *color, int *count);
+void    	check_color(char *color, t_data *data);
+void 		check_color2(char *color, int *count, t_data *data);
 void 		check_colors_c(t_data *data, int i, int j);
 void 		check_colors_f(t_data *data, int i, int j);
 void		complete_checkup(t_data *data);
 int 		is_a_char_map(char c);
 int 		all_data_are_stocked(t_data *data);
-void 		check_255_color(char **tab);
+void 		check_255_color(char **tab, t_data *data);
 void 		check_textures(t_data *data,int *count, char *text);
 void 		copy_map(char **file, int i, int j, char ***map, t_data *data);
 void 		copy_map2(char **file, int i, int *count);

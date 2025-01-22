@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:27:31 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/22 21:22:27 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 23:17:37 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ char	**ft_doublefree(char **tab, int k)
 	return (NULL);
 }
 
-void check_255_color(char **tab)
+void check_255_color(char **tab, t_data *data)
 {
     int i;
     int flag;
@@ -112,6 +112,6 @@ void check_255_color(char **tab)
         i++;
     }
     if (flag == -1)
-        ft_errormap("Wrong color format\n");
+        ft_errormap2("Wrong color format\n", data);
    
 }

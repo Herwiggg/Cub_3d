@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:30:12 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/22 18:13:56 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 23:12:08 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,17 @@ int	ft_check_cub(char *argv)
 	{
 		return (-1);
 	}
+	return (1);
+}
+
+int	ft_errormap2(char *str, t_data *data)
+{
+	int	k;
+
+	free_check(data);
+	k = ft_strlen(str);
+	(void)write(1, "Error\n", 6);
+	(void)write(1, str, k);
+	exit (1);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 20:21:04 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/22 20:21:56 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 23:06:13 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int	main(int argc, char **argv)
 		free_exit(&jeu);
 	}
 	else
-		return (printf("Error\nArgs !\n"), 1);
+		ft_errormap("Wrong Args !\n");
 	return (0);
 }
 //dans la fonction empty line rajouter tab aussi
