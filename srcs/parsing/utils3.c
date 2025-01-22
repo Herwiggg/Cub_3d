@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:30:12 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/18 01:59:09 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 18:13:56 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int is_a_char_map(char c)
 
 int all_data_are_stocked(t_data *data)
 {
-    if (data->_no == NULL || data->_so == NULL || data->_we == NULL || data->_ea == NULL || data->_do == NULL || data->stock_f == NULL || data->stock_c == NULL) 
+    if (data->_no == NULL || data->_so == NULL || data->_we == NULL || data->_ea == NULL || data->stock_f == NULL || data->stock_c == NULL) 
         return (-1);
     return (0);
 }

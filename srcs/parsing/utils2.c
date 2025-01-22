@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:27:31 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/17 22:34:20 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 17:05:08 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,13 @@ char    **ft_split_modif(char *str)
         return (NULL);
     while (k < ft_count(str))
     {
-        while (str[i++] && str[i++] != ' ' && str[i++] != '\t' && str[i++] == ',')
+       while (str[i] && str[i] != ' ' && str[i] != '\t' && str[i] != ',' && str[i] != '\n')
+        {
             j++;
-    tab[k++] = malloc((j + 1) * sizeof(char));
-    j = 0;
+            i++;
+        }
+        tab[k++] = malloc((j + 1) * sizeof(char));
+        j = 0;
         while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == ',')
             i++;
     }

@@ -110,6 +110,10 @@ typedef struct s_data
 	int		count_texts;
 	int		found;
 	int 	count_colors;
+	int		count_ea;
+	int		count_so;
+	int		count_no;
+	int		count_we;
 	t_player player;
 }			t_data;
 
@@ -213,8 +217,8 @@ void		complete_checkup(t_data *data);
 int 		is_a_char_map(char c);
 int 		all_data_are_stocked(t_data *data);
 void 		check_255_color(char **tab);
-void 		check_textures(t_data *data, int i, int j, char *text);
-void 		copy_map(char **file, int i, int j, char ***map);
+void 		check_textures(t_data *data,int *count, char *text);
+void 		copy_map(char **file, int i, int j, char ***map, t_data *data);
 void 		copy_map2(char **file, int i, int *count);
 void 		copy_map3(char **file, int i, int k, int count, char ***map);
 

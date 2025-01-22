@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:41:43 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/18 01:36:00 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 19:17:35 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,22 @@ void stock_data(t_data *data)
         while (data->file[data->i][data->j] && data->found == 0)
         {
             if (data->file[data->i][data->j] == 'N' && data->file[data->i][data->j + 1] == 'O')
-                check_textures(data, data->i, data->j, data->_no);
+                check_textures(data, &data->count_no, data->_no);
             else if (data->file[data->i][data->j] == 'S' && data->file[data->i][data->j + 1] == 'O')
-                check_textures(data, data->i, data->j, data->_so);
+                check_textures(data, &data->count_so , data->_so);
             else if (data->file[data->i][data->j] == 'W' && data->file[data->i][data->j + 1] == 'E')
-                check_textures(data, data->i, data->j, data->_we);
+                check_textures(data, &data->count_we, data->_we);
             else if (data->file[data->i][data->j] == 'E' && data->file[data->i][data->j + 1] == 'A')
-                check_textures(data, data->i, data->j, data->_ea);
-            else if (data->file[data->i][data->j] == 'D' && data->file[data->i][data->j + 1] == 'O')
-                check_textures(data, data->i, data->j, data->_do);
+                check_textures(data, &data->count_ea, data->_ea);
             else if (is_a_char_map(data->file[data->i][data->j]) == 0)
-                return (copy_map(data->file, data->i, data->j, &(data->map)));
+                return (copy_map(data->file, data->i, data->j, &(data->map), data));
             else
                 stock_data2(data);
             data->j++;
         }
         data->i++;
     }
-    complete_checkup(data);
+   complete_checkup(data);
 }
 
 void stock_data2(t_data *data)
@@ -50,11 +48,10 @@ void stock_data2(t_data *data)
 }
 
 
-void check_textures(t_data *data, int i, int j, char *text)
+void check_textures(t_data *data, int *count, char *text)
 {
-    if (text != NULL)
-        ft_errormap("Wrong textures format\n");
-    stock_texts(data->file, &text, i, j);
+    *count += 1;
+    stock_texts(data->file, &text, data->i, data->j);
     data->count_texts++;
     data->found++;
 }

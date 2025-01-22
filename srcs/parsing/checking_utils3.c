@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 01:57:08 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/18 01:57:33 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/22 19:02:40 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,11 @@ void check_color2(char *color, int *count)
 }
 
 void complete_checkup(t_data *data)
-{
-    if (all_data_are_stocked(data) == -1)
-        ft_errormap("Wrong file format\n");
-    if (data->count_texts != 5)
+{   
+    printf("%d\n", data->count_ea);
+    if (data->count_ea > 1 || data->count_we > 1|| data->count_no > 1 || data->count_so > 1)
+        ft_errormap("Wrong textures format\n");
+    if (data->count_texts != 4)
         ft_errormap("Wrong textures format\n");
     if (data->count_colors != 2)
         ft_errormap("Wrong colors format\n");
