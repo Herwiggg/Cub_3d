@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 23:39:01 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/23 00:09:45 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/23 01:21:13 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -230,7 +230,7 @@ int			all_data_are_stocked(t_data *data);
 void		check_255_color(char **tab, t_data *data);
 void		check_textures(t_data *data, int *count, char *text);
 void		copy_map(t_data *data, int i, int j, char ***map);
-void		copy_map2(char **file, int i, int *count);
+void		copy_map2(char **file, int i, int *count, t_data *data);
 void		copy_map3(char **file, int i, int count, char ***map);
 void		free_check(t_data *data);
 

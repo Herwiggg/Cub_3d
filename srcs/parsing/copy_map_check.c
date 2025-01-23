@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:30:55 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/23 00:36:56 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/23 01:20:53 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void copy_map(t_data *data, int i, int j, char ***map)
     cp_i = i;
     count = 0;
     complete_checkup(data);
-    copy_map2(data->file, i, &count);
+    copy_map2(data->file, i, &count, data);
     *map = malloc((count + 1) * sizeof(char *));
     if (!(*map))
         return;
@@ -41,7 +41,7 @@ void copy_map(t_data *data, int i, int j, char ***map)
     }
 }
 
-void copy_map2(char **file, int i, int *count)
+void copy_map2(char **file, int i, int *count, t_data *data)
 {
     int j;
     int flag;
@@ -56,18 +56,18 @@ void copy_map2(char **file, int i, int *count)
         while (file[i][j])
         {
             if (j == 0 && file[i][j] == '\n')
-                ft_errormap("Wrong file format\n");
+                ft_errormap2("Wrong file format\n", data);
             if (file[i][j] != '\n' && file[i][j] != ' ' && file[i][j] != '\t')
                 flag_empty = 1;
             j++;
         }
         if (flag_empty == 0)
-            ft_errormap("Wrong file format\n");
+            ft_errormap2("Wrong file format\n", data);
         *count += 1;
         i++;
     }
     if (flag == 1)
-        ft_errormap("Wrong file format\n");
+        ft_errormap2("Wrong file format\n", data);
 }
 
 void copy_map3(char **file, int i, int count, char ***map)
