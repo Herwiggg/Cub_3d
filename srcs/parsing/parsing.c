@@ -110,5 +110,3 @@ int	check_direction(char *str, t_jeu *jeu)
 	}
 	return (0);
 }
-
-

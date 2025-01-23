@@ -6,13 +6,13 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:30:55 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/23 00:10:06 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/23 00:36:56 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void    copy_map(t_data *data, int i, int j, char ***map)
+void copy_map(t_data *data, int i, int j, char ***map)
 {
     int count;
     int cp_i;
@@ -41,7 +41,7 @@ void    copy_map(t_data *data, int i, int j, char ***map)
     }
 }
 
-void    copy_map2(char **file, int i, int *count)
+void copy_map2(char **file, int i, int *count)
 {
     int j;
     int flag;

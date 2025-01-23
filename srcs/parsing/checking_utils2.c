@@ -6,13 +6,13 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:41:43 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/23 00:12:50 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/23 00:37:11 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void    stock_data(t_data *data)
+void stock_data(t_data *data)
 {
     while (data->file[data->i])
     {
