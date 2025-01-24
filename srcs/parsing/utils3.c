@@ -51,3 +51,23 @@ int	ft_errormap2(char *str, t_data *data)
 	exit(1);
 	return (1);
 }
+
+void	check_255_color(char **tab, t_data *data)
+{
+	int	i;
+	int	flag;
+
+	flag = 0;
+	i = 0;
+	while (tab[i])
+	{
+		if (ft_atoi(tab[i]) > 255)
+		{
+			flag = -1;
+			break ;
+		}
+		i++;
+	}
+	if (flag == -1)
+		ft_errormap2("Wrong color format\n", data);
+}

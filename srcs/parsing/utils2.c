@@ -12,101 +12,96 @@
 
 #include "cub3d.h"
 
-int ft_count(char *str)
+int	ft_count(char *str)
 {
-    int count;
-    int i;
+	int	count;
+	int	i;
 
-    i = 0;
-    count = 0;
-    while (str[i])
-    {
-        if ((str[i + 1] == ' ' || str[i + 1] || str[i + 1] == '\t' || str[i + 1] == '\n' || str[i + 1] == ',') && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i] != ','))
-            count++;
-        i++;
-    }
-    return (count);
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if ((str[i + 1] == ' ' || str[i + 1] || str[i + 1] == '\t'
+				|| str[i + 1] == '\n' || str[i + 1] == ',') && (str[i] != ' '
+				&& str[i] != '\t'
+				&& str[i] != '\n' && str[i] != ','))
+			count++;
+		i++;
+	}
+	return (count);
 }
 
-char **ft_strcpy_modif(char **tab, char *str)
+char	**ft_strcpy_modif(char **tab, char *str)
 {
-    int k;
-    int i;
-    int j;
+	int	k;
+	int	i;
+	int	j;
 
-    i = 0;
-    k = 0;
-    j = 0;
-    while (k < ft_count(str))
-    {
-        j = 0;
-        while (str[i] && str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i] != ',')
-            tab[k][j++] = str[i++];
-        tab[k][j] = '\0';
-        k++;
-        while (str[i] == ' ' || str[i] == '\t' || str[i] == ',')
-            i++;
-    }
-    tab[k] = NULL;
-    return (tab);
+	i = 0;
+	k = 0;
+	j = 0;
+	while (k < ft_count(str))
+	{
+		j = 0;
+		while (str[i] && str[i] != ' '
+			&& str[i] != '\t' && str[i] != '\n' && str[i] != ',')
+			tab[k][j++] = str[i++];
+		tab[k][j] = '\0';
+		k++;
+		while (str[i] == ' ' || str[i] == '\t' || str[i] == ',')
+			i++;
+	}
+	tab[k] = NULL;
+	return (tab);
 }
 
-char **ft_split_modif(char *str)
+char	**ft_split_modif(char *str)
 {
-    char **tab;
-    int k;
-    int i;
-    int j;
+	char		**tab;
+	int			i;
+	int			j;
 
-    i = 0;
-    k = 0;
-    tab = malloc((ft_count(str) + 1) * sizeof(char *));
-    if (!tab)
-        return (NULL);
-    while (k < ft_count(str))
-    {
-        j = 0;
-        while (str[i] && str[i] != ' ' && str[i] != '\t' && str[i] != ',' && str[i] != '\n')
-        {
-            j++;
-            i++;
-        }
-        if (!(tab[k++] = malloc((j + 1) * sizeof(char))))
-            return (ft_doublefree(tab, k));
-        while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == ',')
-            i++;
-    }
-    ft_strcpy_modif(tab, str);
-    return (tab);
+	j = 0;
+	i = 0;
+	tab = malloc((ft_count(str) + 1) * sizeof(char *));
+	if (!tab)
+		return (NULL);
+	ft_split_modif2(str, tab, i, j);
+	ft_strcpy_modif(tab, str);
+	return (tab);
 }
 
-char **ft_doublefree(char **tab, int k)
+char	**ft_split_modif2(char *str, char **tab, int i, int j)
 {
-    int i;
+	int	k;
 
-    i = -1;
-    while (++i < k)
-        free(tab[i]);
-    free(tab);
-    return (NULL);
+	k = 0;
+	while (k < ft_count(str))
+	{
+		j = 0;
+		while (str[i] && str[i] != ' '
+			&& str[i] != '\t' && str[i] != ',' && str[i] != '\n')
+		{
+			j++;
+			i++;
+		}
+		tab[k++] = malloc((j + 1) * sizeof(char));
+		if (!tab[k - 1])
+			return (ft_doublefree(tab, k));
+		while (str[i] == ' ' || str[i] == '\t'
+			|| str[i] == '\n' || str[i] == ',')
+			i++;
+	}
+	return (NULL);
 }
 
-void check_255_color(char **tab, t_data *data)
+char	**ft_doublefree(char **tab, int k)
 {
-    int i;
-    int flag;
+	int	i;
 
-    flag = 0;
-    i = 0;
-    while (tab[i])
-    {
-        if (ft_atoi(tab[i]) > 255)
-        {
-            flag = -1;
-            break;
-        }
-        i++;
-    }
-    if (flag == -1)
-        ft_errormap2("Wrong color format\n", data);
+	i = -1;
+	while (++i < k)
+		free(tab[i]);
+	free(tab);
+	return (NULL);
 }

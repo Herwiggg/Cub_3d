@@ -12,12 +12,12 @@
 
 #include "cub3d.h"
 
-void free_check(t_data *data)
+void	free_check(t_data *data)
 {
-    free_tab(data->file);
-    free_tab(data->stock_f);
-    free(data->_f);
-    free(data->_c);
-    free_tab(data->stock_c);
-    free_tab(data->map);
+	free_tab(data->file);
+	free_tab(data->stock_f);
+	free(data->_f);
+	free(data->_c);
+	free_tab(data->stock_c);
+	free_tab(data->map);
 }
