@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 20:21:04 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/22 23:43:05 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/24 23:53:07 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ int	main(int argc, char **argv)
 		data.file = ft_read_and_stock(argv[1], &data);
 		stock_data(&data);
 		check_map(data.map);
+		jeu.floor_colors = copy_double_tab(data.stock_f, jeu.floor_colors);
+		jeu.ceiling_colors = copy_double_tab(data.stock_c, jeu.ceiling_colors);
 		free_check(&data);
 		if (parsing(argv[1], &jeu))
 			return (1);
@@ -103,4 +105,4 @@ int	main(int argc, char **argv)
 		ft_errormap("Wrong Args !\n");
 	return (0);
 }
-//dans la fonction empty line rajouter tab aussi
+

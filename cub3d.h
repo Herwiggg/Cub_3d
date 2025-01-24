@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 23:39:01 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/23 01:21:13 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/24 23:33:45 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -237,6 +237,8 @@ void		copy_map(t_data *data, int i, int j, char ***map);
 void		copy_map2(char **file, int i, int *count, t_data *data);
 void		copy_map3(char **file, int i, int count, char ***map);
 void		free_check(t_data *data);
+char 		**copy_double_tab(char **src, char **dest);
+char 		*my_strcpy(char *dest, const char *src) ;
 
 // first_six_line.c
 int			copy_map_value(char *file, t_jeu *jeu);
