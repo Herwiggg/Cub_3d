@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 23:39:01 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/26 23:10:41 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/27 00:35:57 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,7 +209,7 @@ char		**ft_split_modif(char *str);
 char		**ft_strcpy_modif(char **tab, char *str);
 int			ft_count(char *str);
 int			ft_errormap2(char *str, t_data *data);
-char		**ft_split_modif2(char *str, char **tab, int i, int j);
+char **ft_split_modif2(char *str, char **tab);
 
 // parsing.c
 int			check_position(t_jeu *jeu);
