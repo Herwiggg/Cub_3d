@@ -6,13 +6,12 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 20:21:04 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/24 23:53:07 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/26 23:41:32 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// retravailler ca
 void	theend(t_info *info, int x)
 {
 	info->y = info->drawstart;
@@ -90,13 +89,13 @@ int	main(int argc, char **argv)
 			ft_errormap("File is not a .cub\n");
 		data.file = ft_read_and_stock(argv[1], &data);
 		stock_data(&data);
-		check_map(data.map);
-		jeu.floor_colors = copy_double_tab(data.stock_f, jeu.floor_colors);
-		jeu.ceiling_colors = copy_double_tab(data.stock_c, jeu.ceiling_colors);
+		check_map(data.map, &data);
 		free_check(&data);
 		if (parsing(argv[1], &jeu))
 			return (1);
 		fusion(&jeu, &info);
+		info.ceiling = convert_rgb_to_color(jeu.ceiling_colors);
+		info.floor = convert_rgb_to_color(jeu.floor_colors);
 		if (game(&info) != 0)
 			return (0);
 		free_exit(&jeu);
@@ -105,4 +104,3 @@ int	main(int argc, char **argv)
 		ft_errormap("Wrong Args !\n");
 	return (0);
 }
-

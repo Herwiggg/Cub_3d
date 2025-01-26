@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 23:53:51 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/22 23:53:55 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/26 23:30:02 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,12 @@ void	fillbuffer(t_info *info, int x)
 	{
 		if (info->debut > HEIGHT || x > WIDTH)
 			break ;
-		info->buf[info->debut][x] = 0xC29D62;
+		info->buf[info->debut][x] = info->ceiling;
 		info->debut++;
 	}
 	while (info->fin < HEIGHT)
 	{
-		info->buf[info->fin][x] = 0x67502C;
+		info->buf[info->fin][x] = info->floor;
 		info->fin++;
 	}
 }

@@ -3,8 +3,8 @@ NO ./textures/plank.xpm
 SO ./textures/plank.xpm
 EA ./textures/plank.xpm
 
-F 24,100,25
-C 40,31,17
+F 135,206,235
+C 100,100,100
 
 
 1111111

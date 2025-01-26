@@ -90,6 +90,8 @@ int	check_map_value(t_jeu *jeu)
 			return (printf("Error\nValue Error !\n"), 1);
 		i++;
 	}
+	if (check_rgb_ceiling(jeu) || check_rgb_floor(jeu))
+        return (printf("Error\nValue RGB\n"));
 	return (0);
 }
 

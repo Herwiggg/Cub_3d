@@ -12,29 +12,28 @@
 
 #include "cub3d.h"
 
-void	check_map(char **map)
+void	check_map(char **map, t_data *data)
 {
 	int	i;
 	int	j;
-	int	flag_start;
 
-	flag_start = 0;
+	data->flag_start = 0;
 	i = 1;
 	if (check_first_last_wall(map) == -1)
-		ft_errormap("Bad wall(s)\n");
+		ft_errormap2("Bad wall(s)\n", data);
 	while (map[i + 1])
 	{
 		j = 0;
 		while (map[i][j] && (map[i][j] == ' ' || map[i][j] == '\t'))
 			j++;
-		check_map2(map, i, j, &flag_start);
+		check_map2(map, i, j, data);
 		i++;
 	}
-	if (flag_start != 1)
-		ft_errormap("Bad start map\n");
+	if (data->flag_start != 1)
+		ft_errormap2("Bad start map\n", data);
 }
 
-void	check_map2(char **map, int i, int j, int *flag_start)
+void	check_map2(char **map, int i, int j, t_data *data)
 {
 	while (map[i][j] && j < del_space_map(map[i]))
 	{
@@ -42,20 +41,20 @@ void	check_map2(char **map, int i, int j, int *flag_start)
 				|| map[i][j] == 'E' || map[i][j] == 'W')
 		{
 			if (check_spaces(map, i, j) == -1)
-				ft_errormap("Bad Wall(s)\n");
+				ft_errormap2("Bad Wall(s)\n", data);
 			if (map[i][j] == 'N' || map[i][j] == 'S' || map[i][j] == 'E'
 				|| map[i][j] == 'W')
 			{
-				*flag_start += 1;
-				if (*flag_start > 1)
-					ft_errormap("Bad start map\n");
+				data->flag_start += 1;
+				if (data->flag_start > 1)
+					ft_errormap2("Bad start map\n", data);
 			}
 		}
 		else if (map[i][j] != '1' && map[i][j] != '0' && map[i][j] != 'N'
 			&& map[i][j] != 'S'
 				&& map[i][j] != 'E' && map[i][j] != 'W' && map[i][j] != ' '
 						&& map[i][j] != '\t')
-			ft_errormap("Bad map\n");
+			ft_errormap2("Bad map\n", data);
 		j++;
 	}
 }

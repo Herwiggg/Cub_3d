@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 23:39:01 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/24 23:33:45 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/26 23:10:41 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,7 @@ typedef struct s_data
 	int			count_so;
 	int			count_no;
 	int			count_we;
+	int			flag_start;
 	t_player	player;
 }			t_data;
 
@@ -175,7 +176,8 @@ typedef struct s_info
 	void	*path_w;
 	void	*path_n;
 	void	*path_s;
-
+	int		ceiling;
+	int		floor;
 	char	**worldmap;
 	char	player;
 	t_jeu	*jeu;
@@ -207,13 +209,13 @@ char		**ft_split_modif(char *str);
 char		**ft_strcpy_modif(char **tab, char *str);
 int			ft_count(char *str);
 int			ft_errormap2(char *str, t_data *data);
-char** ft_split_modif2(char *str, char **tab, int i, int j);
+char		**ft_split_modif2(char *str, char **tab, int i, int j);
 
 // parsing.c
 int			check_position(t_jeu *jeu);
 int			key_release(int key, t_info *info);
-void		check_map(char **map);
-void		check_map2(char **map, int i, int j, int *flag_start);
+void		check_map(char **map, t_data *data);
+void		check_map2(char **map, int i, int j, t_data *data);
 int			check_first_last_wall(char **map);
 int			check_first_last_wall2(char **map, int i, int j);
 int			del_space_map(char *str);
@@ -225,7 +227,7 @@ void		stock_texts(char **file, char **tab, int i, int j);
 void		stock_colors(char **file, char **tab, int i, int j);
 void		check_color(char *color, t_data *data);
 void		check_color2(char *color, int *count, t_data *data);
-void 		check_color3(char *color, int i, int *count);
+void		check_color3(char *color, int i, int *count);
 void		check_colors_c(t_data *data, int i, int j);
 void		check_colors_f(t_data *data, int i, int j);
 void		complete_checkup(t_data *data);
@@ -237,8 +239,11 @@ void		copy_map(t_data *data, int i, int j, char ***map);
 void		copy_map2(char **file, int i, int *count, t_data *data);
 void		copy_map3(char **file, int i, int count, char ***map);
 void		free_check(t_data *data);
+int			check_rgb_ceiling(t_jeu *jeu);
+int			check_rgb_floor(t_jeu *jeu);
 char 		**copy_double_tab(char **src, char **dest);
 char 		*my_strcpy(char *dest, const char *src) ;
+int 		convert_rgb_to_color(char **rgb);
 
 // first_six_line.c
 int			copy_map_value(char *file, t_jeu *jeu);

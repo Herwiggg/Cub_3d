@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:27:14 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/25 00:00:42 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/26 22:39:20 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,3 @@ char    **copy_double_tab(char **src, char **dest)
     dest[i] = NULL;
     return (dest);
 }
-
-
-
-
-
-
