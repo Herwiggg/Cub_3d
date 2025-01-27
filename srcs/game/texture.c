@@ -43,7 +43,6 @@ void	load_image(t_info *info, int *texture, char *path, t_img *img)
 		free_texture(info);
 		destroy_win_disp(info);
 		free_exit(info->jeu);
-		free_exit2(info);
 		exit(printf("Error\nTexture Error\n"));
 	}
 	img->data = (int *)mlx_get_data_addr(img->img,
