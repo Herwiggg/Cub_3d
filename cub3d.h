@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 23:39:01 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/27 00:35:57 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/27 01:40:48 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,7 +209,7 @@ char		**ft_split_modif(char *str);
 char		**ft_strcpy_modif(char **tab, char *str);
 int			ft_count(char *str);
 int			ft_errormap2(char *str, t_data *data);
-char **ft_split_modif2(char *str, char **tab);
+char		**ft_split_modif2(char *str, char **tab);
 
 // parsing.c
 int			check_position(t_jeu *jeu);
@@ -234,7 +234,7 @@ void		complete_checkup(t_data *data);
 int			is_a_char_map(char c);
 int			all_data_are_stocked(t_data *data);
 void		check_255_color(char **tab, t_data *data);
-void		check_textures(t_data *data, int *count, char *text);
+void		check_textures(t_data *data, int *count, char *text, int var);
 void		copy_map(t_data *data, int i, int j, char ***map);
 void		copy_map2(char **file, int i, int *count, t_data *data);
 void		copy_map3(char **file, int i, int count, char ***map);
@@ -244,6 +244,9 @@ int			check_rgb_floor(t_jeu *jeu);
 char 		**copy_double_tab(char **src, char **dest);
 char 		*my_strcpy(char *dest, const char *src) ;
 int 		convert_rgb_to_color(char **rgb);
+void		*copy_string_to_void(const char *input);
+void 		stock_info(t_jeu *jeu, t_data *data, t_info *info);
+void 		convert_color(t_info *info, t_jeu *jeu);
 
 // first_six_line.c
 int			copy_map_value(char *file, t_jeu *jeu);

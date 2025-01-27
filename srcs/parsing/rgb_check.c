@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:48:51 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/27 00:57:25 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/27 01:40:27 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,10 @@ int convert_rgb_to_color(char **rgb)
     
     int color = (r << 16) | (g << 8) | b ;
     return color;
+}
+
+void convert_color(t_info *info, t_jeu *jeu)
+{
+    info->ceiling = convert_rgb_to_color(jeu->ceiling_colors);
+	info->floor = convert_rgb_to_color(jeu->floor_colors);
 }

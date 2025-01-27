@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 23:52:07 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/27 00:13:13 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/27 01:31:29 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,21 @@ void	fusion(t_jeu *jeu, t_info *info)
 {
 	info->posx = (double)(jeu->pos_i + 0.5);
 	info->posy = (double)(jeu->pos_j + 0.5);
-	info->path_e = jeu->directions[0][1];
-	info->path_w = jeu->directions[1][1];
-	info->path_s = jeu->directions[2][1];
-	info->path_n = jeu->directions[3][1];
 	info->worldmap = jeu->map_spaced;
 	info->player = jeu->start_position;
 	info->jeu = jeu;
+}
+
+void *copy_string_to_void(const char *input)
+{
+    if (!input)
+        return NULL;
+
+    size_t len = strlen(input);
+    void *buffer = malloc(len + 1);  // +1 pour le caractère '\0'
+    if (!buffer)
+        return NULL;
+
+    ft_memcpy(buffer, input, len + 1);  // copie la chaîne y compris le '\0'
+    return buffer;                   // renvoie la zone sous forme de void*
 }

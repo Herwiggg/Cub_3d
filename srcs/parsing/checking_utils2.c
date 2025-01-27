@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:41:43 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/27 01:04:42 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/27 01:18:14 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,16 @@ void	stock_data3(t_data *data)
 {
 	if (data->file[data->i][data->j] == 'N'
 		&& data->file[data->i][data->j + 1] == 'O')
-		check_textures(data, &data->count_no, data->_no);
+		check_textures(data, &data->count_no, data->_no, 0);
 	else if (data->file[data->i][data->j] == 'S'
 		&& data->file[data->i][data->j + 1] == 'O')
-		check_textures(data, &data->count_so, data->_so);
+		check_textures(data, &data->count_so, data->_so, 1);
 	else if (data->file[data->i][data->j] == 'W'
 		&& data->file[data->i][data->j + 1] == 'E')
-		check_textures(data, &data->count_we, data->_we);
+		check_textures(data, &data->count_we, data->_we, 2);
 	else if (data->file[data->i][data->j] == 'E'
 		&& data->file[data->i][data->j + 1] == 'A')
-		check_textures(data, &data->count_ea, data->_ea);
+		check_textures(data, &data->count_ea, data->_ea, 3);
 }
 
 void	stock_data2(t_data *data)
@@ -62,10 +62,18 @@ void	stock_data2(t_data *data)
 		ft_errormap2("Wrong format\n", data);
 }
 
-void	check_textures(t_data *data, int *count, char *text)
+void	check_textures(t_data *data, int *count, char *text, int var)
 {
 	(void)text;
 	*count += 1;
+	if (var == 0)
+		stock_texts(data->file, &(data->_no), data->i, data->j);
+	if (var == 1)
+		stock_texts(data->file, &(data->_so), data->i,data->j);
+	if (var == 2)
+		stock_texts(data->file, &(data->_we), data->i, data->j);
+	if (var == 3)
+		stock_texts(data->file, &(data->_ea), data->i, data->j);
 	data->count_texts++;
 	data->found++;
 }

@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 20:21:04 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/27 00:55:49 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/27 01:40:07 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	parsing(char *file, t_jeu *jeu)
 {
 	copy_file(file, jeu);
 	copy_map_value(file, jeu);
-	check_map_value(jeu);
+	//check_map_value(jeu);
 	copy_game_map(jeu);
 	parsing_map(jeu);
 	check_position(jeu);
@@ -90,14 +90,12 @@ int	main(int argc, char **argv)
 		data.file = ft_read_and_stock(argv[1], &data);
 		stock_data(&data);
 		check_map(data.map, &data);
-		jeu.floor_colors = copy_double_tab(data.stock_f, jeu.floor_colors);
-		jeu.ceiling_colors = copy_double_tab(data.stock_c, jeu.ceiling_colors);
+		stock_info(&jeu, &data, &info);
 		free_check(&data);
 		if (parsing(argv[1], &jeu))
 			return (1);
 		fusion(&jeu, &info);
-		info.ceiling = convert_rgb_to_color(jeu.ceiling_colors);
-		info.floor = convert_rgb_to_color(jeu.floor_colors);
+		convert_color(&info, &jeu);
 		if (game(&info) != 0)
 			return (0);
 		free_exit(&jeu);

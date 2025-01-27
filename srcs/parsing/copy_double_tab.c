@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:27:14 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/26 22:39:20 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/27 01:38:20 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,14 @@ char    **copy_double_tab(char **src, char **dest)
     }
     dest[i] = NULL;
     return (dest);
+}
+
+void stock_info(t_jeu *jeu, t_data *data, t_info *info)
+{
+		jeu->floor_colors = copy_double_tab(data->stock_f, jeu->floor_colors);
+		jeu->ceiling_colors = copy_double_tab(data->stock_c, jeu->ceiling_colors);
+		info->path_e = copy_string_to_void(data->_ea);
+		info->path_w = copy_string_to_void(data->_we);
+		info->path_s = copy_string_to_void(data->_so);
+		info->path_n = copy_string_to_void(data->_no);
 }
