@@ -298,4 +298,6 @@ void		reculer(t_info *info);
 void		adroite(t_info *info);
 void		agauche(t_info *info);
 void		free_exit2(t_info *info);
+void		free_all(t_info *info, t_jeu *jeu);
+
 #endif
