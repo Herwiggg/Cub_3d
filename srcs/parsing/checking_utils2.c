@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 22:41:43 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/27 00:00:28 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/27 01:04:42 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ void	stock_data2(t_data *data)
 		check_colors_f(data, data->i, data->j);
 	else if (data->file[data->i][data->j] == 'C')
 		check_colors_c(data, data->i, data->j);
+	else if (data->file[data->i][data->j] != ' ' && data->file[data->i][data->j] != '\n'
+		&& data->file[data->i][data->j] != '\t')
+		ft_errormap2("Wrong format\n", data);
 }
 
 void	check_textures(t_data *data, int *count, char *text)
