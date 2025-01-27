@@ -2,7 +2,7 @@ NO ./textures/iron.xpm
 SO ./textures/redstone.xpm
 
 F 120,255,30
-C 120,0,251
+C 255,0,251
 
 WE ./textures/diams.xpm
 EA ./textures/plank.xpm
