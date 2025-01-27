@@ -30,6 +30,7 @@ char	**ft_doublefree(char **tab, int k)
 {
 	int	i;
 
+	i = 0;
 	while (++i < k)
 		free(tab[i]);
 	free(tab);

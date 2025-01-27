@@ -68,13 +68,25 @@ void	check_textures(t_data *data, int *count, char *text, int var)
 	(void)text;
 	*count += 1;
 	if (var == 0)
+	{
+		free(data->_no);
 		stock_texts(data->file, &(data->_no), data->i, data->j);
+	}
 	if (var == 1)
+	{
+		free(data->_so);
 		stock_texts(data->file, &(data->_so), data->i, data->j);
+	}
 	if (var == 2)
+	{
+		free(data->_we);
 		stock_texts(data->file, &(data->_we), data->i, data->j);
+	}
 	if (var == 3)
+	{
+		free(data->_ea);
 		stock_texts(data->file, &(data->_ea), data->i, data->j);
+	}
 	data->count_texts++;
 	data->found++;
 }
