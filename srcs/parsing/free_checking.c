@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 20:19:59 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/27 01:13:57 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/27 01:52:38 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,14 @@ void	free_check(t_data *data)
 	free(data->_so);
 	free(data->_no);
 	free(data->_we);
+}
+
+char	**ft_doublefree(char **tab, int k)
+{
+	int	i;
+
+	while (++i < k)
+		free(tab[i]);
+	free(tab);
+	return (NULL);
 }

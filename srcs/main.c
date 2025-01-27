@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 20:21:04 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/27 01:40:07 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/27 01:48:22 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ int	parsing(char *file, t_jeu *jeu)
 {
 	copy_file(file, jeu);
 	copy_map_value(file, jeu);
-	//check_map_value(jeu);
 	copy_game_map(jeu);
 	parsing_map(jeu);
 	check_position(jeu);

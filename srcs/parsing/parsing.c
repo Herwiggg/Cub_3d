@@ -91,30 +91,24 @@ int	check_map_value(t_jeu *jeu)
 		i++;
 	}
 	if (check_rgb_ceiling(jeu) || check_rgb_floor(jeu))
-        return (printf("Error\nValue RGB\n"));
+		return (printf("Error\nValue RGB\n"));
 	return (0);
 }
 
-int    check_direction(char *str, t_jeu *jeu)
+int	check_direction(char *str, t_jeu *jeu)
 {
-    int            i;
-    int            check;
-    static char    *tab[7] = {"NO", "SO", "EA", "WE", "C", "F"};
+	int			i;
+	static char	*tab[7] = {"NO", "SO", "EA", "WE", "C", "F"};
 
-    i = 0;
-    check = 0;
-    while (tab[i])
-    {
-        if (!ft_strncmp(str, tab[i], ft_strlen(tab[i]))
-            && ft_isspace(str[ft_strlen(tab[i])]) && jeu->ok[i] == 0)
-        {
-            jeu->directions[i] = ft_split(str, ' ');
-            jeu->ok[i] = 1;
-            check = 1;
-        }
-        i++;
-    }
-    if (check == 0)
-        return (1);
-    return (0);
+	i = 0;
+	while (tab[i])
+	{
+		if (!ft_strncmp(str, tab[i], ft_strlen(tab[i]))
+			&& ft_isspace(str[ft_strlen(tab[i])]) && jeu->ok[i] == 0)
+		{
+			jeu->directions[i] = ft_split(str, ' ');
+		}
+		i++;
+	}
+	return (0);
 }

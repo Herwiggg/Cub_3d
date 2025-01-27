@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 23:39:01 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/27 01:40:48 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/27 02:00:16 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -241,12 +241,12 @@ void		copy_map3(char **file, int i, int count, char ***map);
 void		free_check(t_data *data);
 int			check_rgb_ceiling(t_jeu *jeu);
 int			check_rgb_floor(t_jeu *jeu);
-char 		**copy_double_tab(char **src, char **dest);
-char 		*my_strcpy(char *dest, const char *src) ;
-int 		convert_rgb_to_color(char **rgb);
+char		**copy_double_tab(char **src, char **dest);
+char		*my_strcpy(char *dest, const char *src);
+int			convert_rgb_to_color(char **rgb);
 void		*copy_string_to_void(const char *input);
-void 		stock_info(t_jeu *jeu, t_data *data, t_info *info);
-void 		convert_color(t_info *info, t_jeu *jeu);
+void		stock_info(t_jeu *jeu, t_data *data, t_info *info);
+void		convert_color(t_info *info, t_jeu *jeu);
 
 // first_six_line.c
 int			copy_map_value(char *file, t_jeu *jeu);

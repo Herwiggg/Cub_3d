@@ -6,7 +6,7 @@
 /*   By: almichel <almichel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 23:52:07 by almichel          #+#    #+#             */
-/*   Updated: 2025/01/27 01:31:29 by almichel         ###   ########.fr       */
+/*   Updated: 2025/01/27 01:48:06 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,17 @@ void	fusion(t_jeu *jeu, t_info *info)
 	info->jeu = jeu;
 }
 
-void *copy_string_to_void(const char *input)
+void	*copy_string_to_void(const char *input)
 {
-    if (!input)
-        return NULL;
+	size_t	len;
+	void	*buffer;
 
-    size_t len = strlen(input);
-    void *buffer = malloc(len + 1);  // +1 pour le caractère '\0'
-    if (!buffer)
-        return NULL;
-
-    ft_memcpy(buffer, input, len + 1);  // copie la chaîne y compris le '\0'
-    return buffer;                   // renvoie la zone sous forme de void*
+	if (!input)
+		return (NULL);
+	len = strlen(input);
+	buffer = malloc(len + 1);
+	if (!buffer)
+		return (NULL);
+	ft_memcpy(buffer, input, len + 1);
+	return (buffer);
 }
