@@ -47,6 +47,7 @@ int	game(t_info *info)
 	if (smallparsing(info) == -1)
 		return (printf("Error\n parsing error\n"), free_texture(info), 0);
 	load_texture(info);
+	free_exit2(info);
 	info->movespeed = 0.009;
 	info->rotspeed = 0.007;
 	info->win = mlx_new_window(info->mlx, WIDTH, HEIGHT, "mlx");

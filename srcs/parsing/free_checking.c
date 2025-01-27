@@ -36,3 +36,11 @@ char	**ft_doublefree(char **tab, int k)
 	free(tab);
 	return (NULL);
 }
+
+void	free_exit2(t_info *info)
+{
+	free(info->path_e);
+	free(info->path_w);
+	free(info->path_s);
+	free(info->path_n);
+}

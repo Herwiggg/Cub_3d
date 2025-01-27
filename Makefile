@@ -2,7 +2,7 @@ NAME			=	cub3D
 
 CC				=	cc
 
-CFLAGS			=	-Wall -Wextra -Werror -g3 -Wall -Werror -Wextra
+CFLAGS			=	-Wall -Wextra -Werror -g3
 
 LIBFT          = libft
  
